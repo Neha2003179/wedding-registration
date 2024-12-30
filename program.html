@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Prevent form submission
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.remove('hidden'); // Show success message
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+<!-- Header Section -->
+<header class="bg-pink-600 text-white py-8 shadow-lg">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-extrabold tracking-wider">Our Wedding Celebration</h1>
+        <p class="text-xl mt-2">Join us as we celebrate love, commitment, and the beginning of a beautiful journey</p>
+    </div>
+</header>
+
+<!-- Main Section -->
+<main class="container mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Left Section: Wedding Details -->
+    <section class="bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-3xl font-semibold text-pink-600 mb-6">Wedding Details</h2>
+        <p class="text-lg text-gray-700 mb-4">We're so excited to share our special day with you! Here are all the details you need to know:</p>
+        <ul class="list-disc pl-6 text-gray-700">
+            <li class="mb-2">Date: 14th February 2024</li>
+            <li class="mb-2">Time: 3:00 PM</li>
+            <li class="mb-2">Venue: The Grand Ballroom, 123 Wedding St, City</li>
+        </ul>
+    </section>
+
+    <!-- Right Section: RSVP Form -->
+    <section class="bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-3xl font-semibold text-pink-600 mb-6">RSVP</h2>
+        <p class="text-lg text-gray-700 mb-4">Let us know if you can join us on our special day! Please fill out the form below.</p>
+
+        <!-- Success Message Box -->
+        <div id="successMessage" class="hidden bg-green-100 text-green-800 p-4 rounded-md mb-4">
+            <strong>Success!</strong> Your RSVP has been submitted successfully.
+        </div>
+
+        <form onsubmit="showSuccessMessage(event)">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-600">Full Name</label>
+                <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" required />
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-600">Email Address</label>
+                <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" required />
+            </div>
+            <div class="mb-4">
+                <label for="attending" class="block text-gray-600">Will you be attending?</label>
+                <select id="attending" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    <option value="yes">Yes, I'll be there!</option>
+                    <option value="no">No, unfortunately I can't make it</option>
+                </select>
+            </div>
+            <button type="submit" class="bg-pink-600 text-white py-2 px-6 rounded-md hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300">RSVP Now</button>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>
